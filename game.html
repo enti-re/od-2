@@ -1,0 +1,47 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            function computerPlay()
+            {
+                let k=Math.floor(Math.random()*3);
+                let str =["rock","paper","scissor"];
+                return str[k];
+            }
+
+            function input()
+            {
+                return toLowerCase(prompt("Enter Rock Paper Scissor"));
+            }
+
+            function playGame(playerSelection,computerSelection)
+            {
+                console.log(`computer chooose ${computerSelection}`)
+                if((playerSelection=="rock") && (computerSelection=="scissor"))
+                console.log("You are a Winner");
+                else if(playerSelection=="scissor" && computerSelection=="paper")
+                console.log("You are a Winner");
+                else if(playerSelection=="paper" && computerSelection=="rock")
+                console.log("You are a Winner");
+                else
+                console.log("You Lose");
+            }
+            const playerchoice="rock";
+            
+
+            function game()
+            {
+                for(let i=0;i<5;i++)
+                {
+                    const playerchoice=window.prompt("Enter Your choice");
+                    // playerchoice=playerchoice.toLowerCase();
+                    console.log(playerchoice);
+                    const computerchoice=computerPlay();
+                    playGame(playerchoice,computerchoice);
+                }
+            }
+
+            game();
+        </script>
+    </body>
+</html>
