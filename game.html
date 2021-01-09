@@ -1,5 +1,7 @@
 <html>
-    <head></head>
+    <head>
+        <title>rockPaperScissor</title>
+    </head>
     <body>
         <script>
             function computerPlay()
@@ -17,7 +19,9 @@
             function playGame(playerSelection,computerSelection)
             {
                 console.log(`computer chooose ${computerSelection}`)
-                if((playerSelection=="rock") && (computerSelection=="scissor"))
+                if(playerSelection==computerSelection)
+                console.log("Draw")
+                else if((playerSelection=="rock") && (computerSelection=="scissor"))
                 console.log("You are a Winner");
                 else if(playerSelection=="scissor" && computerSelection=="paper")
                 console.log("You are a Winner");
@@ -26,21 +30,16 @@
                 else
                 console.log("You Lose");
             }
-            const playerchoice="rock";
-            
-
             function game()
             {
                 for(let i=0;i<5;i++)
                 {
-                    const playerchoice=window.prompt("Enter Your choice");
-                    // playerchoice=playerchoice.toLowerCase();
+                    const playerchoice=(window.prompt("Enter Your choice")).toLowerCase();
                     console.log(playerchoice);
                     const computerchoice=computerPlay();
                     playGame(playerchoice,computerchoice);
                 }
             }
-
             game();
         </script>
     </body>
