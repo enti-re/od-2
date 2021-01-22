@@ -4,13 +4,21 @@
         <link rel="stylesheet" href="rps.css">
     </head>
     <body>
-        <div id="topDisplay"></div>
+        <div >Computer Chooses:<br><span id="computerSelelction"></span></div>
+        <div id="result">Result: <span id="finalResult"></span></div>
         <div class="wrapper">
-            <button class="btn" id="btn1" value="rock">Rock</button>
-            <button class="btn" id="btn2" value="paper">Paper</button>
-            <button class="btn" id="btn3" value="scissor">Scissor</button>
+            <button class="btn" id="btn1" value="Rock">Rock</button>
+            <button class="btn" id="btn2" value="Paper">Paper</button>
+            <button class="btn" id="btn3" value="Scissor">Scissor</button>
         </div>
-        <div id="bottomDisplay"></div>
+        <div id="playerScore">
+            <h2>Player ScoreCard</h2>
+            <p id="ps"></p>
+        </div>
+        <div id="computerScore">
+            <h2>Computer ScoreCard</h2>
+            <p id="cs"></p>
+        </div>
         <script src="rps.js"></script>
     </body>
 </html>

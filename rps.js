@@ -1,41 +1,85 @@
+let playerScore = 0;
+let computerScore = 0;
+let buttons = document.querySelectorAll("button");
+let buttonArray = [...buttons];
+const computerSelection = document.querySelector("#computerSelelction");
+const finalResult = document.querySelector("#finalResult");
+let playerScoreCard = document.querySelector("#ps");
+let computerScoreCard = document.querySelector("#cs");
+playerScoreCard.textContent=0;
+computerScoreCard.textContent=0;
+
 function computerPlay()
 {
      let k=Math.floor(Math.random()*3);
-     let str =["rock","paper","scissor"];
+     let str =["Rock","Paper","Scissor"];
      return str[k];
 }
- function playGame(playerSelection,computerSelection)
+
+function playGame(playerSelection,computerSelection)
  {
      let result;
-    //  (`computer chooose ${computerSelection}`)
      if(playerSelection==computerSelection)
-     result="Draw";
-     else if((playerSelection=="rock") && (computerSelection=="scissor"))
-     result="You are a Winner";
-     else if(playerSelection=="scissor" && computerSelection=="paper")
-     result="You are a Winner";
-     else if(playerSelection=="paper" && computerSelection=="rock")
-     result="You are a Winner";
+     result="draw";
+     else if((playerSelection=="Rock") && (computerSelection=="Scissor"))
+     result="win";
+     else if(playerSelection=="Scissor" && computerSelection=="Paper")
+     result="win";
+     else if(playerSelection=="Paper" && computerSelection=="Rock")
+     result="win";
      else
-     result="You Lose";
+     result="lose";
      return result;
  }
 
+function updateScore(value)
+{
+    let computerSelection = computerPlay();
+    let playerSelection = value;
+    let result = playGame(playerSelection,computerSelection);
+    if(result=="win")
+    {
+        playerScore+=1;
+        playerScoreCard.textContent=playerScore;
+    }
+    else if(result=="lose")
+    {
+        computerScore+=1;
+        computerScoreCard.textContent=computerScore;
+    }
+    console.log(result);
+}
 
-const buttons = document.querySelectorAll('button');
+
+function Game1()
+ {
+    buttonArray.some((button)=>{
+        button.addEventListener("click",()=>{
+            if(computerScore>=5 || playerScore>=5)
+            return true;
+            let value = button.value;
+            updateScore(value);
+        })
+    })  
+    return;
+ }
+
+function Game2()
+{
+    
+}
+function Game()
+{
+    Game1();
+    Game2();
+}
+
+Game();
+   
 
 
-buttons.forEach(button => {
-    button.addEventListener("click",()=>{
-        let value = button.value;
-        let computer = computerPlay();
-        let result = playGame(value,computer);
-        const bottomDisplay = document.querySelector("#bottomDisplay");
-        bottomDisplay.textContent=`Result of the match:\n${result}`;
-        const topDisplay=document.querySelector("#topDisplay");
-        topDisplay.textContent=`Computer chooses ${computer}`;
-    })
-});
+
+
 
 
 
