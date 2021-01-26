@@ -50,7 +50,7 @@ function updateScore(value)
         computerScore+=1;
         computerScoreCard.textContent=computerScore;
     }
-    console.log(result);
+    // console.log(result);
     computerOutput.textContent = computerSelection;
 }
 
