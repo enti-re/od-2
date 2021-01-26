@@ -55,11 +55,11 @@ function updateScore(value)
 }
 
 
+
 function Game()
 {
     buttonArray.some((button)=>{
         button.addEventListener("click",()=>{
-            
             if(computerScore>=5 || playerScore>=5)
             return true;
 
