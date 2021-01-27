@@ -8,7 +8,6 @@ let playerScoreCard = document.querySelector("#ps");
 let computerScoreCard = document.querySelector("#cs");
 let playAgain = document.querySelector("#playAgain");
 playAgain.style.visibility = "hidden";
-playerScoreCard.fontweight="bold";
 playerScoreCard.textContent=0;
 computerScoreCard.textContent=0;
 
